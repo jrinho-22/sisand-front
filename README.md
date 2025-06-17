@@ -1,6 +1,6 @@
 # SisandFront
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.10.
+live app: https://jrinho-22.github.io/sisand-front
 
 ## Development server
 
