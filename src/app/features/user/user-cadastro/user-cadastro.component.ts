@@ -4,7 +4,6 @@ import { UserService } from '../shared/user.service';
 import { UserDto, UserForm } from '../shared/types';
 import { TextFieldComponent } from '../../../shared/components/inputs/text-field/text-field.component';
 import { CommonModule } from '@angular/common';
-import { NgxMaskDirective } from 'ngx-mask';
 
 @Component({
   selector: 'app-user-cadastro',

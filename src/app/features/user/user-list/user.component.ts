@@ -1,14 +1,14 @@
 import { Component, ViewChild } from '@angular/core';
 import { UserService } from '../shared/user.service';
 import { IUser } from '../../../shared/types/IUser';
-import { DxDataGridModule, DevExtremeModule, DxDataGridComponent } from 'devextreme-angular';
+import { DxDataGridModule, DxDataGridComponent } from 'devextreme-angular';
 import { CommonModule } from '@angular/common';
 import { RowRemovedEvent, SavedEvent } from 'devextreme/ui/data_grid';
 import { ListType } from '../shared/types';
 
 @Component({
   selector: 'app-user',
-  imports: [DxDataGridModule, DevExtremeModule, CommonModule],
+  imports: [DxDataGridModule, CommonModule],
   providers: [UserService],
   templateUrl: './user.component.html',
   styleUrl: './user.component.scss'

@@ -38,13 +38,12 @@ export class LoginComponent {
       this.loginForm.markAllAsTouched();
       return;
     }
-
     const formData = this.loginForm.value;
     try {
-      const login = await this.loginService.login(formData as Login);
+      await this.loginService.login(formData as Login);
       this.router.navigate(['/home']);
     } catch (error) {
-      console.error(error)
+      console.log(error)
     }
   }
 }

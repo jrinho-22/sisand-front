@@ -13,7 +13,7 @@ export abstract class BaseService<T = any> {
 
   constructor(protected http: HttpClient) {
     this._baseUrl = this.config();
-    this.serverUrl = `${environment.API_URL}`;
+    this.serverUrl = `${environment.API_URL}/`;
   }
 
   abstract config(): string
@@ -34,6 +34,7 @@ export abstract class BaseService<T = any> {
     body: any,
     header?: HttpHeaders
   ): Observable<any> {
+
     return this.http
       .post<any>(`${this.serverUrl}${this._baseUrl}${url}`, body, {
         headers: header,
@@ -72,7 +73,6 @@ export abstract class BaseService<T = any> {
 
   private handlerError(error: any): any {
     let message
-
     if (error.error) {
       let message = error.error.message;
 
