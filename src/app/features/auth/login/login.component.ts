@@ -34,7 +34,6 @@ export class LoginComponent {
 
   async signIn(e: Event) {
     e.preventDefault()
-    console.log("funnnn")
     if (this.loginForm.invalid) {
       this.loginForm.markAllAsTouched();
       return;

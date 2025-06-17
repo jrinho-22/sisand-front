@@ -1,6 +1,6 @@
 import { CommonModule } from "@angular/common";
-import { Component, Input, HostListener, ElementRef, forwardRef, Optional, Host, SkipSelf } from "@angular/core";
-import { AbstractControl, ControlContainer, ControlValueAccessor, NG_VALIDATORS, NG_VALUE_ACCESSOR, ReactiveFormsModule, ValidationErrors, Validator } from "@angular/forms";
+import { Component, Input, Optional, Host, SkipSelf } from "@angular/core";
+import { AbstractControl, ControlContainer, ControlValueAccessor, NG_VALUE_ACCESSOR, ReactiveFormsModule, ValidationErrors, Validator } from "@angular/forms";
 import { NgxMaskDirective } from "ngx-mask";
 
 @Component({

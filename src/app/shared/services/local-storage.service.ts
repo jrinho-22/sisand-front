@@ -42,7 +42,6 @@ export class LocalStorageService {
   public logout(redirect: boolean = true) {
     localStorage.removeItem(environment.USER_STORAGE);
 
-    // Define o estado inicial após logout (por exemplo, um objeto vazio)
     this.authentication$.next({} as IUsersSession);
 
     if (redirect) window.location.href = '../auth';

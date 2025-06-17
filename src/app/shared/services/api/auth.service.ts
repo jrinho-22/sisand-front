@@ -2,7 +2,6 @@ import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { firstValueFrom } from "rxjs";
 import { IUsersSession } from "../../types/IUserSession";
-import { IUser } from "../../types/IUser";
 import { BaseService } from "./api.service";
 
 @Injectable({
