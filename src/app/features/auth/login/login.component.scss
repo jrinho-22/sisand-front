@@ -1,0 +1,19 @@
+.login-image {
+  position: relative;
+  background-image: repeating-linear-gradient(45deg,
+      var(--promary-blue),
+      var(--promary-blue) 10px,
+      #ffffff 10px,
+      #ffffff 40px);
+  background-size: cover;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url('../../../../../public/assets/images/sisand_cover.jpeg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}

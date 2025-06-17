@@ -1,0 +1,8 @@
+<label for="name" class="form-label">{{label}}</label>
+<input [formControl]="$any(formControl)" [validation]="true"
+    [dropSpecialCharacters]="dropSpecialCharacters" [showMaskTyped]="showMaskTyped ? true : false"
+    [mask]="mask ? mask : null" [type]="type" class="form-control" [ngClass]="{
+        'is-invalid': error && validation}" />
+<small *ngIf="error" class="invalid-feedback">
+    {{error}}
+</small>

@@ -1,0 +1,22 @@
+:root {
+    --promary-blue: #28446c;
+    --promary-orange: #f25834
+}
+
+.bg-primary-blue {
+    background-color: var(--promary-blue);
+}
+
+.primary-blue {
+    color: var(--promary-blue);
+}
+
+.btn-action{
+    color: white;
+    background-color: var(--promary-blue);
+    &:hover{
+        color: white;
+        background-color: var(--promary-blue);
+    }
+}
+
