@@ -2,7 +2,7 @@
 
   <dx-data-grid #dataGrid id="dataGrid" [dataSource]="(userData | async)" [columnHidingEnabled]="true"
     [allowColumnReordering]="true">
-    <dxo-editing mode="row" [allowUpdating]="user.emailVerified ? true : false" [allowDeleting]="user.emailVerified ? true : false">
+    <dxo-editing mode="row" [allowUpdating]="true" [allowDeleting]="true">
     </dxo-editing>
     <dxi-column dataField="Id" caption="id" [visible]="false"></dxi-column>
     <dxi-column dataField="name" caption="Nome">
@@ -20,8 +20,8 @@
     </dxi-column>
 
     <dxi-column type="buttons" [width]="110">
-      <dxi-button name="edit"></dxi-button>
-      <dxi-button name="delete"></dxi-button>
+      <dxi-button [disabled]="!user.emailVerified ? true : false" name="edit"></dxi-button>
+      <dxi-button [disabled]="!user.emailVerified ? true : false" name="delete"></dxi-button>
     </dxi-column>
   </dx-data-grid>
 
