@@ -1,6 +1,9 @@
 # SisandFront
 
 live app: https://jrinho-22.github.io/sisand-front
+login para acesso:
+e-mail: jrinho22@gmail.com
+senha: 12345
 
 ## Development server
 
