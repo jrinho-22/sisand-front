@@ -5,12 +5,10 @@
         <h2 class="mb-4">Login</h2>
         <form [formGroup]="loginForm" style="width: 100%; max-width: 400px;">
           <div class="mb-3">
-            <label for="email" class="form-label">Email address</label>
-            <input formControlName="email" type="email" class="form-control" id="email" placeholder="Enter email">
+            <app-text-field mask="A*@A*.A*" label="E-mail" formControlName="email"></app-text-field>
           </div>
           <div class="mb-3">
-            <label for="password" class="form-label">Password</label>
-            <input formControlName="password" type="password" class="form-control" id="password" placeholder="Password">
+            <app-text-field label="Senha" formControlName="password" type="password"></app-text-field>
           </div>
           <button (click)="signIn($event)" type="submit" class="btn btn-action mt-4 w-100">Sign In</button>
         </form>

@@ -3,12 +3,14 @@ import { BehaviorSubject } from 'rxjs';
 import { environment } from '../../environments/environment';
 import { IUsersSession } from '../types/IUserSession';
 import { AuthService } from './api/auth.service';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
 })
 export class LocalStorageService {
   protected authService = inject(AuthService)
+  protected router = inject(Router)
   public authentication$: BehaviorSubject<IUsersSession>;
 
   constructor() {
@@ -17,7 +19,6 @@ export class LocalStorageService {
   }
 
   async init() {
-    console.log(this.authentication$.value, 'this.authentication$.value')
     if (this.authentication$.value.id) {
       const dbUserSession = await this.authService.getUser(this.authentication$.value.id) as IUsersSession
       this.authentication$.next(dbUserSession)
@@ -44,7 +45,7 @@ export class LocalStorageService {
 
     this.authentication$.next({} as IUsersSession);
 
-    if (redirect) window.location.href = '../auth';
+    if (redirect) this.router.navigate(['/login']);
   }
 
   public isLogged(): boolean {

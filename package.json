@@ -3,14 +3,14 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "predeploy": "ng build --configuration production --output-path=dist",
-    "deploy": "gh-pages -d dist",
+    "predeploy": "ng build --configuration production --base-href /sisand-front/",
+    "deploy": "gh-pages -d dist/sisand-front/browser",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
-  
+
   "private": true,
   "dependencies": {
     "@angular/common": "^19.2.0",

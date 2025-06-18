@@ -4,6 +4,7 @@ import { UserService } from '../shared/user.service';
 import { UserDto, UserForm } from '../shared/types';
 import { TextFieldComponent } from '../../../shared/components/inputs/text-field/text-field.component';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-cadastro',
@@ -16,6 +17,7 @@ export class UserCadastroComponent {
   protected userForm!: FormGroup<any>;
 
   constructor(
+    public router: Router,
     private fb: NonNullableFormBuilder,
     private userService: UserService
   ) { }
@@ -36,13 +38,18 @@ export class UserCadastroComponent {
 
   async registerUser(e: Event) {
     e.preventDefault()
-    console.log(this.userForm)
     if (this.userForm.invalid) {
       this.userForm.markAllAsTouched();
       return;
     }
 
     const formData = this.userForm.value;
-    await this.userService.registerUser(formData as UserDto);
+    try {
+      await this.userService.registerUser(formData as UserDto);
+      this.router.navigate(['/home']);
+    } catch (error) {
+      console.error(error)
+    }
+
   }
 }

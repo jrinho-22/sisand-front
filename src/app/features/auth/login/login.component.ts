@@ -4,10 +4,11 @@ import { Login, LoginForm } from '../shared/types';
 import { LoginService } from '../shared/login.service';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
+import { TextFieldComponent } from '../../../shared/components/inputs/text-field/text-field.component';
 
 @Component({
   selector: 'app-login',
-  imports: [ReactiveFormsModule, CommonModule],
+  imports: [ReactiveFormsModule, TextFieldComponent, CommonModule],
   providers: [LoginService],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
@@ -43,7 +44,7 @@ export class LoginComponent {
       await this.loginService.login(formData as Login);
       this.router.navigate(['/home']);
     } catch (error) {
-      console.log(error)
+      window.alert("E-mail ou senha incorretos")
     }
   }
 }
