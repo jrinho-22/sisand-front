@@ -5,6 +5,8 @@ import { DxDataGridModule, DxDataGridComponent } from 'devextreme-angular';
 import { CommonModule } from '@angular/common';
 import { RowRemovedEvent, SavedEvent } from 'devextreme/ui/data_grid';
 import { ListType } from '../shared/types';
+import { IUsersSession } from '../../../shared/types/IUserSession';
+import { LocalStorageService } from '../../../shared/services/local-storage.service';
 
 @Component({
   selector: 'app-user',
@@ -15,9 +17,14 @@ import { ListType } from '../shared/types';
 })
 export class UserComponent {
   protected userData: Promise<IUser[]>
+  protected user: IUsersSession
   @ViewChild('dataGrid', { static: true }) dataGrid!: DxDataGridComponent;
-  
-  constructor(private userService: UserService) {
+
+  constructor(
+    private localStorage: LocalStorageService,
+    private userService: UserService
+  ) {
+    this.user = this.localStorage.getUser()
     this.userData = userService.getAll("") as Promise<IUser[]>
   }
 
@@ -30,18 +37,17 @@ export class UserComponent {
       this.handleDelete(e);
     });
   }
-  
+
   async handleDelete(e: RowRemovedEvent<ListType>) {
     const id = e.data.id
     await this.userService.deleteUser(id)
   }
 
   async handleSave(e: SavedEvent<ListType>) {
-    console.log(e.changes)
     const data = e.changes[0].data
     const { id, ...rest } = data;
     if (!id) return
     await this.userService.editUser(id, rest)
   }
-  
+
 }

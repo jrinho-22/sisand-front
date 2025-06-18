@@ -11,7 +11,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './navbar.component.scss'
 })
 export class NavbarComponent {
-  user: IUsersSession
+  protected user: IUsersSession
   constructor(
     private localStorage: LocalStorageService,
     private router: Router
