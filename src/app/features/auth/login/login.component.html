@@ -1,21 +1,22 @@
 <div class="container-fluid vh-100">
-    <div class="row h-100">
-      
-      <div class="col-md-6 d-flex flex-column justify-content-center align-items-center bg-light p-5">
-        <h2 class="mb-4">Login</h2>
-        <form [formGroup]="loginForm" style="width: 100%; max-width: 400px;">
-          <div class="mb-3">
-            <app-text-field mask="A*@A*.A*" label="E-mail" formControlName="email"></app-text-field>
-          </div>
-          <div class="mb-3">
-            <app-text-field label="Senha" formControlName="password" type="password"></app-text-field>
-          </div>
-          <button (click)="signIn($event)" type="submit" class="btn btn-action mt-4 w-100">Sign In</button>
-        </form>
-      </div>
-  
-      <div class="col-md-6 login-image d-none d-md-block">
-      </div>
-  
+  <div class="row h-100">
+
+    <div class="col-md-6 d-flex flex-column justify-content-center align-items-center bg-light p-5">
+      <h2 class="mb-4">Login</h2>
+      <form [formGroup]="loginForm" style="width: 100%; max-width: 400px;">
+        <div class="mb-3">
+          <app-text-field mask="A*@A*.A*" label="E-mail" formControlName="email"></app-text-field>
+        </div>
+        <div class="mb-3">
+          <app-text-field label="Senha" formControlName="password" type="password"></app-text-field>
+        </div>
+        <!-- <button (click)="signIn($event)" type="submit" class="btn btn-action mt-4 w-100">Sign In</button> -->
+        <app-loading-button loadingIconSpace="ms-4" customClass="w-100" label="Sign In" [function]="signIn.bind(this)" />
+      </form>
     </div>
+
+    <div class="col-md-6 login-image d-none d-md-block">
+    </div>
+
   </div>
+</div>

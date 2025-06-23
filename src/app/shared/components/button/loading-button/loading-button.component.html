@@ -1,0 +1,6 @@
+<div>
+    <button [ngClass]="customClass" (click)="runAction($event)" type="submit" class="btn btn-action mt-4 position-relative px-5">
+        {{label}}
+        <app-spinner [customClass]="`position-absolute top-50 translate-middle-y ${loadingIconSpace}`" *ngIf="loading" />
+    </button>
+</div>

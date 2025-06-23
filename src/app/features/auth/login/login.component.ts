@@ -5,10 +5,11 @@ import { LoginService } from '../shared/login.service';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { TextFieldComponent } from '../../../shared/components/inputs/text-field/text-field.component';
+import { LoadingButtonComponent } from '../../../shared/components/button/loading-button/loading-button.component';
 
 @Component({
   selector: 'app-login',
-  imports: [ReactiveFormsModule, TextFieldComponent, CommonModule],
+  imports: [ReactiveFormsModule, LoadingButtonComponent, TextFieldComponent, CommonModule],
   providers: [LoginService],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'

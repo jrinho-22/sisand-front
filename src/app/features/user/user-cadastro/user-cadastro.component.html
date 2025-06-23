@@ -19,6 +19,6 @@
             <app-text-field label="Senha" formControlName="password" type="password"></app-text-field>
         </div>
     </div>
-
-    <button (click)="registerUser($event)" type="submit" class="btn px-5 mt-4 btn-action">Registrar Usuario</button>
+    <app-loading-button label="Registrar Usuario" [function]="registerUser.bind(this)" />
+    <!-- <button (click)="registerUser($event)" type="submit" class="btn px-5 mt-4 btn-action">Registrar Usuario</button> -->
 </form>

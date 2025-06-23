@@ -5,10 +5,11 @@ import { UserDto, UserForm } from '../shared/types';
 import { TextFieldComponent } from '../../../shared/components/inputs/text-field/text-field.component';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
+import { LoadingButtonComponent } from '../../../shared/components/button/loading-button/loading-button.component';
 
 @Component({
   selector: 'app-user-cadastro',
-  imports: [TextFieldComponent, ReactiveFormsModule, CommonModule],
+  imports: [TextFieldComponent, LoadingButtonComponent, ReactiveFormsModule, CommonModule],
   providers: [UserService],
   templateUrl: './user-cadastro.component.html',
   styleUrl: './user-cadastro.component.scss'
