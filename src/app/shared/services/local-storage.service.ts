@@ -31,7 +31,7 @@ export class LocalStorageService {
       environment.USER_STORAGE,
       JSON.stringify(authentication)
     );
-    this.authentication$.next(authentication); // Atualiza o estado com o novo usuário
+    this.authentication$.next(authentication); 
   }
 
   public getUser(): IUsersSession {
@@ -49,6 +49,8 @@ export class LocalStorageService {
   }
 
   public isLogged(): boolean {
-    return localStorage.getItem(environment.USER_STORAGE) ? true : false;
+    var userSessionString = localStorage.getItem(environment.USER_STORAGE)
+    var userSession: IUsersSession = userSessionString ? JSON.parse(userSessionString) : null  
+    return userSession?.id ? true : false 
   }
 }

@@ -20,6 +20,7 @@ export class AuthService extends BaseService<IUsersSession> {
     async getUser(id: string) {
         try {
             const result = await firstValueFrom(this.get(id));
+            console.log(result, 'dcjnevjrn')
             return result
         } catch (error) {
             return {}

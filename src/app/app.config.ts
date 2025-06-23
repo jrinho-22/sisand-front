@@ -1,4 +1,4 @@
-import { APP_INITIALIZER, ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
+import { APP_INITIALIZER, ApplicationConfig, inject, provideAppInitializer, provideZoneChangeDetection } from '@angular/core';
 import { provideRouter, withHashLocation } from '@angular/router';
 import { provideEnvironmentNgxMask } from 'ngx-mask'
 import { routes } from './app.routes';
@@ -19,3 +19,4 @@ export const appConfig: ApplicationConfig = {
     }
   ]
 };
+
